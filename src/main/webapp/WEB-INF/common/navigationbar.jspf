@@ -1,0 +1,77 @@
+<nav class="navbar sticky-top navbar-dark navbar-expand-lg bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="logo.png" width="200" height="30" class="d-inline-block align-top" alt="logo">
+        Performance Prediction
+    </a>
+    <div class="container">
+
+        <ul class="navbar-nav ">
+            <li class="nav-item active">
+                <a class="nav-link scroll-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scroll-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scroll-link" href="#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scroll-link" href="#helpsupport">Help & Support</a>
+            </li>
+        </ul>
+
+        <!--         can use session to change the login botton to dropdown-->
+
+        <%
+            String currentUserEmail = (String) request.getSession().getAttribute("currentUserEmail");
+            System.out.println("Currentuseremail=" + currentUserEmail);
+
+            if (currentUserEmail == null) {
+        %>
+        <a class="btn btn-outline-light inline-block scroll-link" href="#login" role="button">Login</a>
+
+        <% } else {
+        %>
+        <div class="btn-group dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="glyphicon glyphicon-user"> <strong>${currentUserEmail}</strong></i>
+                
+                <span class="caret"></span>
+            </button>
+
+            <div class="dropdown-container" style="padding-right: 100px;">
+                <ul class="dropdown-menu">
+<!--                    <li>
+                        <div class="dropdown-toolbar">
+                            Signed in as<br>
+                            <strong>${currentUserEmail}</strong>
+                        </div> /dropdown-toolbar 
+                    </li>-->
+
+                    <li><a href="#">Your profile</a></li>
+                    <li><a href="Logout">Log out</a></li>
+
+                    <li> 
+                        <div class="dropdown-footer">
+                             <i class="glyphicon glyphicon-cog"></i> Account Settings
+
+                        </div> <!--dropdown-footer --> 
+                        </li>
+                </ul>
+
+                <!--                
+                
+                            </div><!-- /dropdown-container -->
+            </div><!-- /dropdown -->
+
+            <% }%>
+
+
+
+
+
+
+            <!--                <a class="btn btn-outline-light inline-block scroll-link" href="#login" role="button">Login</a>-->
+
+        </div>
+</nav>

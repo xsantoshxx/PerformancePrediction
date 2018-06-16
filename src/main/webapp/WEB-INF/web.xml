@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <display-name>Student Performance Prediction</display-name>
+
+	<welcome-file-list>
+		<welcome-file>login</welcome-file>
+	</welcome-file-list>
+<!--        
+         <filter>
+    <filter-name>LoginRequiredFilter</filter-name>
+    <filter-class> com.sanjiv.spp.Filter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>LoginRequiredFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>-->
+    
+   
+</web-app>
